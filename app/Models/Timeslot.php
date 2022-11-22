@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TimeSlot extends Model
+class Timeslot extends Model
 {
     use HasFactory;
 }

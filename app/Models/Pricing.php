@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Car;
-use App\Models\Customer;
-use App\Models\CarModel;
-use App\Models\Brand;
-use App\Models\ScheduledMaintenanceJob;
-use App\Models\Timeslot;
-use App\Models\Engineer;
-use App\Models\MaintenanceJob;
-use App\Models\SparePart;
+//use App\Models\Customer;
+//use App\Models\CarModel;
+//use App\Models\Brand;
+use App\Models\Schedmaintjob;
+//use App\Models\Timeslot;
+//use App\Models\Engineer;
+//use App\Models\MaintenanceJob;
+//use App\Models\SparePart;
 
 class Pricing extends Model
 {
@@ -32,7 +32,7 @@ class Pricing extends Model
         // Only if carModel has data, proceed to retrieve spareparts else no parts of this car model available
         if ($carModel) {
           // retrieve brand data according to carModel
-          $brand = $carModel->brand;
+          //$brand = $carModel->brand;
           // retrieve 1 scheduledmaitenancejob (SMJ) according to the car->id and if a timeslot is linked
           $schedMaintJob = Schedmaintjob::whereHas('timeslots', function($q) use ($startDate) {
             $q->where('start_date', '=', $startDate);
